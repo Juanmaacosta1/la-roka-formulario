@@ -6,10 +6,12 @@ const HORARIOS_RESTAURANTE = {
     diasReserva: 45   
 };
 
+// NÚMERO DE WHATSAPP DEL RESTAURANTE
+const NUMERO_WHATSAPP = '2974219373';
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('reservaForm');
     const fechaInput = document.getElementById('fecha');
-    const horarioSelect = document.getElementById('horario');
     
     // Inicializar estado 
     actualizarEstadoRestaurante();
@@ -66,28 +68,11 @@ document.addEventListener('DOMContentLoaded', function() {
             enviarReservaWhatsApp();
         }
     });
-    const telefonoInput = document.getElementById('telefono');
-    if (telefonoInput) {
-        telefonoInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-            
-            if (value.length > 0) {
-                if (value.length <= 2) {
-                    value = '+54' + value;
-                } else if (value.length <= 4) {
-                    value = '+54 ' + value.slice(0,2) + ' ' + value.slice(2);
-                } else if (value.length <= 8) {
-                    value = '+54 ' + value.slice(0,2) + ' ' + value.slice(2,5) + ' ' + value.slice(5);
-                } else {
-                    value = '+54 ' + value.slice(0,2) + ' ' + value.slice(2,5) + ' ' + value.slice(5,8) + ' ' + value.slice(8,12);
-                }
-                e.target.value = value;
-            }
-        });
-    }
+    
     actualizarResumen();
     setInterval(actualizarEstadoRestaurante, 60000);
 });
+
 function actualizarEstadoRestaurante() {
     const ahora = new Date();
     const diaActual = ahora.toLocaleDateString('es-AR', { weekday: 'long' }).toLowerCase();
@@ -250,6 +235,7 @@ function validateForm() {
     
     return isValid;
 }
+
 function enviarReservaWhatsApp() {
     const form = document.getElementById('reservaForm');
     const formData = new FormData(form);
@@ -269,43 +255,45 @@ function enviarReservaWhatsApp() {
     });
     
     // Crear mensaje estructurado 
-    let mensaje = `🍽️ *RESERVA - LA ROKA PUB & CAFÉ CONCERT* 🍽️\n\n`;
+    let mensaje = `🍽️ *NUEVA RESERVA - LA ROKA PUB & CAFÉ CONCERT* 🍽️\n\n`;
     
-    mensaje += `*👤 Información Personal*\n`;
+    mensaje += `*👤 INFORMACIÓN DEL CLIENTE*\n`;
     mensaje += `• Nombre: ${formData.get('nombre')}\n`;
     mensaje += `• Comensales: ${formData.get('comensales')} personas\n`;
-    mensaje += `• Teléfono: ${formData.get('telefono')}\n`;
     
     if (formData.get('email')) {
         mensaje += `• Email: ${formData.get('email')}\n`;
     }
     
-    mensaje += `\n*📅 Fecha y Hora*\n`;
+    mensaje += `\n*📅 FECHA Y HORA SOLICITADA*\n`;
     mensaje += `• Fecha: ${fechaFormateada}\n`;
     mensaje += `• Hora: ${formData.get('horario')} hs\n`;
     
     if (ocasiones.length > 0) {
-        mensaje += `• Ocasión: ${ocasiones.join(', ')}\n`;
+        mensaje += `• Ocasión especial: ${ocasiones.join(', ')}\n`;
     }
     
     if (formData.get('necesidades')) {
-        mensaje += `\n*⚠️ Necesidades Especiales*\n`;
+        mensaje += `\n*⚠️ NECESIDADES ESPECIALES*\n`;
         mensaje += `${formData.get('necesidades')}\n`;
     }
     
     mensaje += `\n--------------------------------\n`;
-    mensaje += `Enviado desde formulario web\n`;
-    mensaje += `📅 ${new Date().toLocaleDateString('es-AR')} ${new Date().toLocaleTimeString('es-AR', {hour: '2-digit', minute:'2-digit'})}`;
+    mensaje += `📋 *Reserva enviada desde formulario web*\n`;
+    mensaje += `🕐 ${new Date().toLocaleDateString('es-AR')} ${new Date().toLocaleTimeString('es-AR', {hour: '2-digit', minute:'2-digit'})}`;
     
-    
-    const phoneNumber = '2974219373';
-    
-    // Crear URL de WhatsApp 
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensaje)}`;
+    // Crear URL de WhatsApp (se envía AL RESTAURANTE)
+    const whatsappURL = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
     
     // Abrir WhatsApp en nueva pestaña
     window.open(whatsappURL, '_blank');
     
     // Mostrar mensaje de confirmación
-    alert('✅ Reserva enviada correctamente. Se abrirá WhatsApp para que puedas confirmar.');
-  
+    alert('✅ Reserva enviada correctamente. Se abrirá WhatsApp para que puedas confirmar con el restaurante.');
+    
+    // Opcional: Limpiar formulario después de enviar
+    setTimeout(() => {
+        form.reset();
+        actualizarResumen();
+    }, 1000);
+}
