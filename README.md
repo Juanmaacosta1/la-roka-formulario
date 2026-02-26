@@ -1,23 +1,64 @@
-La Roka – App de Reservas Online
+# 🍽️ La Roka – Sistema de Reservas Online
 
-Este proyecto es una aplicación web creada para facilitar el sistema de reservas del restaurante La Roka Pub & Café Concert. La idea principal es que cualquier cliente pueda reservar una mesa de manera rápida y directa desde el celular o la computadora, sin complicaciones.
+Aplicación web diseñada para facilitar la gestión de reservas del restaurante **La Roka Pub & Café Concert**.
+Permite a los clientes reservar una mesa de forma rápida desde el celular o computadora, sin llamadas ni complicaciones.
 
-La app guía al usuario en un proceso sencillo donde puede elegir la cantidad de personas, la fecha, el horario y agregar algún detalle especial antes de enviar la reserva.
+![Estado](https://img.shields.io/badge/estado-en%20desarrollo-yellow)
+![Tecnología](https://img.shields.io/badge/HTML-CSS-JS-blue)
+![Responsive](https://img.shields.io/badge/mobile-friendly-green)
 
-Funcionalidades principales
+---
 
-Selección de día y hora para reservar
+## 📸 Vista previa
 
-Registro de cantidad de comensales
+Agregá una captura de la app dentro de la carpeta **/assets** y aparecerá acá:
 
-Espacio para comentarios u ocasiones especiales
+![Preview](assets/preview.png)
 
-Confirmación rápida a través de WhatsApp
+---
 
-Diseño pensado para usarse fácil desde el teléfono 📱
+## 🚀 Funcionalidades
 
-Objetivo del proyecto
+* Selección de fecha y hora
+* Registro de cantidad de personas
+* Campo para comentarios u ocasiones especiales
+* Confirmación automática mediante WhatsApp
+* Diseño optimizado para teléfonos
+* Proceso simple e intuitivo
 
-El objetivo fue desarrollar una solución práctica para un negocio real, mejorando la organización de reservas y la experiencia del cliente.
+---
 
-🌐 Demo disponible en: https://la-roka-reservas.netlify.app/
+## 🧪 Cómo usar
+
+1. Abrir el archivo `index.html`
+2. Elegir día y horario
+3. Completar datos de la reserva
+4. Enviar solicitud por WhatsApp
+5. Recibir confirmación del restaurante
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+* HTML5
+* CSS3
+* JavaScript
+* API de WhatsApp mediante enlace directo
+
+---
+
+## 🎯 Objetivo del proyecto
+
+Desarrollar una solución práctica para reemplazar las reservas en papel,
+mejorando la organización del negocio y reduciendo errores humanos.
+
+El sistema está pensado para uso real dentro de un restaurante.
+
+---
+
+
+## Autor
+
+Desarrollado por **Juanma Acosta**
+
+Proyecto realizado como práctica y aplicación real para negocio gastronómico.
