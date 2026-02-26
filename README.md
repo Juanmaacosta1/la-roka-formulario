@@ -13,7 +13,7 @@ Permite a los clientes reservar una mesa de forma rápida desde el celular o com
 
 Agregá una captura de la app dentro de la carpeta **/assets** y aparecerá acá:
 
-![Preview](https://la-roka-reservas.netlify.app/)
+https://la-roka-reservas.netlify.app/
 
 ---
 
