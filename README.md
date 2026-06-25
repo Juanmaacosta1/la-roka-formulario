@@ -9,7 +9,7 @@ Permite a los clientes reservar una mesa de forma rápida desde el celular o com
 
 ---
 
-## 📸 Vista previa
+##  Vista previa
 
 Agregá una captura de la app dentro de la carpeta **/assets** y aparecerá acá:
 
@@ -17,7 +17,7 @@ https://la-roka-reservas.netlify.app/
 
 ---
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 * Selección de fecha y hora
 * Registro de cantidad de personas
@@ -38,7 +38,7 @@ https://la-roka-reservas.netlify.app/
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+##  Tecnologías utilizadas
 
 * HTML5
 * CSS3
@@ -47,7 +47,7 @@ https://la-roka-reservas.netlify.app/
 
 ---
 
-## 🎯 Objetivo del proyecto
+##  Objetivo del proyecto
 
 Desarrollar una solución práctica para reemplazar las reservas en papel,
 mejorando la organización del negocio y reduciendo errores humanos.
