@@ -28,7 +28,7 @@ https://la-roka-reservas.netlify.app/
 
 ---
 
-## 🧪 Cómo usar
+## Cómo usar
 
 1. Abrir el archivo `index.html`
 2. Elegir día y horario
